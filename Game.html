@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Game</title>
+		<script type="text/javascript" src="phaser.min.js"></script>
+	</head>
+	<body>
+		<script>
+			var game = new Phaser.Game(1111.11, 635, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, render: render });
+
+			function preload() {
+
+			    game.load.image('background', 'assets/sprites/BG.png');
+			    game.load.image('tile', 'assets/sprites/Tiles/Tile (2).png');
+			    game.load.spritesheet('player', 'assets/sprites/player.png', 3405, 432, 363);
+
+			}
+
+			var background;
+			var suelo;
+			var b;
+
+			function create() {
+				background = game.add.sprite(0,0,'background');
+				background.width =  game.width;
+				background.height = game.height;
+
+				suelo = game.add.tileSprite(0, game.height - 71, game.width, 0, 'tile');
+
+				Phaser.Canvas.setSmoothingEnabled(game.context, false);
+
+			    b = game.add.sprite(game.world.centerX, game.world.centerY, 'player');
+
+			    b.animations.add('walk');
+			    b.animations.play('walk', 10, true);
+
+			    //  Listen for input events on this sprite
+			    b.inputEnabled = true;
+
+			    //  Check the pixel data of the sprite
+			    b.input.pixelPerfectOver = true;
+
+			    //  Enable the hand cursor
+			    b.input.useHandCursor = true;
+			}
+
+			function update() {
+
+			}
+			function render () {
+
+				 game.debug.spriteInputInfo(b, 363, 363);
+    			game.debug.geom(b.input._tempPoint);
+
+			}
+		</script>
+	</body>
+</html>
