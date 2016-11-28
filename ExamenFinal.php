@@ -2,14 +2,14 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Login</title>
+        <link href="styles/style.css" type="text/css" rel="stylesheet"/>
 		<script type="text/javascript" scr="bootstrap-3.3.7-dist\js\bootstrap.min.js"></script>
 	</head>
  	<body>
- 		<div class="text-center">
- 			<h1>Iniciar seción</h1>
- 			<h2>!Empieza a jugar GoogleRex ya!</h2>
+ 		<div class="text-center" id="title">
+ 			<h1>ARKANOID</h1>
  		</div>
-
+        
  		<?php
 		session_start();
 
@@ -84,30 +84,29 @@
 		}
 
 		?>
-
- 		<form class="form-horizontal text-center" action="ExamenFinal.php" method="post" enctype="multipart/form-data">
-		  
-		  <div class="form-group">
-		    <label class="col-sm-2 control-label col-sm-offset-3">Email:</label>
-		    <div class="col-sm-3">
+        <div class="text-center">
+            <h2>Inicia sesión</h2>
+            <form class="form-horizontal text-center" action="ExamenFinal.php" method="post" enctype="multipart/form-data">
+		    <div class="form-group">
+		    <div class="col-sm-4 col-sm-offset-4">
 		      <input type="email" class="form-control col-sm-4" placeholder="Email" name="txt_username">
 		    </div>
-		  </div>
-
-		  <div class="form-group">
-		    <label class="col-sm-2 control-label col-sm-offset-3">Contraseña:</label>
-		    <div class="col-sm-3">
+		    </div>
+		    <div class="form-group">
+		    <div class="col-sm-4 col-sm-offset-4">
 		      <input type="password" class="form-control col-sm-4" placeholder="Password" name="txt_password">
 		    </div>
-		  </div>
+		    </div>
 
-		  <div class="form-group">
-		    <div class="col-sm-offset-5">
+		    <div class="form-group">
+		    <div class="col-sm-4 col-sm-offset-4">
 		      <button type="submit" class="btn btn-default col-sm-4" name="cmd_enviar">Entrar</button>
 		    </div>
-		  </div>
+		    </div>
+		  </form>
+        </div>
 
-		</form>
+
 
 		<p class="text-center"><span>No estas registado aún?</span><a href="registro.php"> registrate aqui</a></p>
 

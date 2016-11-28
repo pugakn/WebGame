@@ -10,10 +10,11 @@ session_start();
 	<head>
 		<meta charset="UTF-8">
 		<title>Perfil</title>
+        <link href="styles/style.css" type="text/css" rel="stylesheet"/>
 		<script type="text/javascript" scr="bootstrap-3.3.7-dist\js\bootstrap.min.js"></script>
 	</head>
 	<body>
-		</br><p class="text-right col-sm-11"><?php echo $_SESSION["player_name"] . " " . $_SESSION["player_lastname"] . "Cerrar cesión" ?></p></br>
+		<br><p class="text-right col-sm-11"><?php echo $_SESSION["player_name"] . " " . $_SESSION["player_lastname"] . "Cerrar cesión" ?></p><br>
 
 		<div class="text-center">
 			<h1>Bienvenido <?php echo $_SESSION["player_name"] . " " . $_SESSION["player_lastname"]; ?></h1>

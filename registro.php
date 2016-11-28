@@ -5,11 +5,10 @@ error_reporting(E_ALL);
 	<head>
 		<meta charset="UTF-8">
 		<title>Login</title>
+        <link href="styles/style.css" type="text/css" rel="stylesheet"/>
 		<script type="text/javascript" scr="bootstrap-3.3.7-dist\js\bootstrap.min.js"></script>
 	</head>
  	<body>
- 		<h1>Registro de nuevo jugador</h1>
- 		<h2>!Introduce tus datos, y comienza a jugar!</h2>
 
  		<?php 
 		if(isset($_POST['cmd_enviar'])){
@@ -97,17 +96,25 @@ error_reporting(E_ALL);
 				$conn->close();
 			}
 		?>
+        <div class="text-center" id="title">
+            <h1>Registro de nuevo jugador</h1>
+        </div>
 
- 		<form action="registro.php" method="post" enctype="multipart/form-data">
- 			<p><span>Nombre:</span><input type="text" name="txt_name"></p>
- 			<p><span>Apellido:</span><input type="text" name="txt_lastname"></p>
- 			<p><span>Email:</span><input type="text" name="txt_email"></p>
- 			<p><span>Contraseña:</span><input type="password" name="txt_password"></p>
- 			<p><span>Repetir contraseña:</span><input type="password" name="txt_rpassword"></p>
- 			<p><span>Foto de perfil:</span><input type="file" name="file_photo"></p>
- 			<input type="submit" name="cmd_enviar" value="Registrar"><input type="reset" name="cmd_cancelar" value="Cancelar">
- 		</form>
- 		
+        <div class="text-center">
+            <form class="form-horizontal text-center" action="registro.php" method="post" enctype="multipart/form-data">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <input type="text" name="txt_name" class="form-control txtbox" placeholder="Nombre">
+                    <input type="text" name="txt_lastname" class="form-control txtbox" placeholder="Apellido">
+                    <input type="text" name="txt_email" class="form-control txtbox" placeholder="Email">
+                    <input type="password" name="txt_password" class="form-control txtbox" placeholder="Contraseña">
+                    <input type="password" name="txt_rpassword" class="form-control txtbox" placeholder="Contraseña">
+                    <p class ="col-sm-6">Foto de perfil: <input type="file" name="file_photo" class="button" ></p>
+                    <input type="submit" name="cmd_enviar" value="Registrar" class="btn btn-default col-sm-6">
+                    <input type="reset" name="cmd_cancelar" value="Cancelar" class="btn btn-default col-sm-6 ">
+                </div>
+
+            </form>
+        </div>
 
  		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
